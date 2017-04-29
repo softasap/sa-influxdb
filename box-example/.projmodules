@@ -1,0 +1,4 @@
+[submodule "roles/sa-influxdb"]
+        path = roles/sa-influxdb
+        url = https://github.com/softasap/sa-influxdb.git
+

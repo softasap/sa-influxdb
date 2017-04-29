@@ -1,0 +1,3 @@
+---
+# tasks file for sa-influxdb
+  - include: tasks_influxdb.yml

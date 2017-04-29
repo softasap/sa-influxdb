@@ -1,0 +1,5 @@
+---
+# defaults file for sa-influxdb
+
+role_dir: "{{role_path}}"
+influxdb_version: latest  
