@@ -8,8 +8,15 @@
   tags:
     -influxdb
 
+- name: InfluxDB | Installation dependencies
+  apt: pkg="curl" state="present"
+  when: influxdb_check_deb.rc == 1
+  tags:
+    -influxdb
+
 - name: InfluxDB | Download package
-  get_url: validate_certs="false" url="https://dl.influxdata.com/influxdb/releases/influxdb_{{influxdb_version |  default('latest')}}_amd64.deb" dest="/tmp/influxdb.deb"
+  # get_url: validate_certs="false" url="https://dl.influxdata.com/influxdb/releases/influxdb_{{influxdb_version |  default('latest')}}_amd64.deb" dest="/tmp/influxdb.deb"
+  shell: curl -s https://dl.influxdata.com/influxdb/releases/influxdb_{{influxdb_version |  default('latest')}}_amd64.deb > /tmp/influxdb.deb
   when: influxdb_check_deb.rc == 1
   tags:
     -influxdb
