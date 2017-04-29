@@ -15,8 +15,8 @@
     -influxdb
 
 - name: InfluxDB | Download package
-  # get_url: validate_certs="false" url="https://dl.influxdata.com/influxdb/releases/influxdb_{{influxdb_version |  default('latest')}}_amd64.deb" dest="/tmp/influxdb.deb"
-  shell: curl  -o /tmp/influxdb.deb https://dl.influxdata.com/influxdb/releases/influxdb_{{influxdb_version |  default('latest')}}_amd64.deb
+  # get_url: validate_certs="false" url="https://dl.influxdata.com/influxdb/releases/influxdb_{{influxdb_version |  default('1.2.2')}}_amd64.deb" dest="/tmp/influxdb.deb"
+  shell: curl  -o /tmp/influxdb.deb https://dl.influxdata.com/influxdb/releases/influxdb_{{influxdb_version |  default('1.2.2')}}_amd64.deb
   when: influxdb_check_deb.rc == 1
   tags:
     -influxdb
